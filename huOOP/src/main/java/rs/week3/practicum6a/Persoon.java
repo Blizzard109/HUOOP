@@ -16,15 +16,6 @@ public class Persoon {
         budget = bg;
     }
 
-    private boolean persoonHeeftGame(Game game){
-        for (var g: mijnGames) {
-            if(g.getNaam().contains(game.getNaam()) && g.getReleaseJaar() == game.getReleaseJaar()){
-                return true;
-            }
-        }
-        return false;
-    }
-
     private Game gameInLijst(Game game){
         for (var g: mijnGames) {
             if(g.equals(game)){
@@ -39,7 +30,7 @@ public class Persoon {
     }
 
     public boolean koop(Game g){
-        if(!persoonHeeftGame(g) && g.huidigeWaarde() <= budget) {
+        if(!mijnGames.contains(g) && g.huidigeWaarde() <= budget) {
             budget -= g.huidigeWaarde();
             mijnGames.add(g);
             return true;
@@ -49,9 +40,9 @@ public class Persoon {
     }
 
     public boolean verkoop(Game g, Persoon koper){
-        if(persoonHeeftGame(g)){
+        if(mijnGames.contains(g)){
             if(koper.koop(g)){
-                mijnGames.remove(gameInLijst(g));
+                mijnGames.remove(g);
                 budget += g.huidigeWaarde();
                 return true;
             }

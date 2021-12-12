@@ -26,8 +26,8 @@ public class Game {
     }
 
     public double huidigeWaarde(){
-        double prijs;
-        prijs = (releaseJaar != LocalDate.now().getYear())? nieuwprijs - (nieuwprijs *0.30) : nieuwprijs;
+        double prijs = nieuwprijs;
+        prijs *= Math.pow(0.7,LocalDate.now().getYear()- releaseJaar);
         if(prijs < 0){
             return 0;
         }else {
@@ -35,9 +35,12 @@ public class Game {
         }
     }
 
-    public boolean equals(Game g){
-        if(g.getNaam() == this.naam && g.getReleaseJaar() == this.releaseJaar){
-            return true;
+    public boolean equals(Object g){
+        if(g instanceof Game){
+            Game og = (Game) g;
+            if(og.getNaam() == this.naam && og.getReleaseJaar() == this.releaseJaar){
+                return true;
+            }
         }
         return false;
     }
