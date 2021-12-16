@@ -1,5 +1,6 @@
 package rs.weerk4.practicum8;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 
 public class Computer implements Goed{
@@ -7,6 +8,8 @@ public class Computer implements Goed{
     private String macAdres;
     private double aanschafPrijs;
     private int productieJaar;
+    private String pattern = "0.00";
+    private DecimalFormat decimalFormat = new DecimalFormat(pattern);
 
     public Computer(String tp, String adr, double pr, int jr) {
         type=tp;
@@ -39,11 +42,9 @@ public class Computer implements Goed{
 
     @Override
     public String toString() {
-        return "Computer{" +
-                "type='" + type + '\'' +
-                ", macAdres='" + macAdres + '\'' +
-                ", aanschafPrijs=" + aanschafPrijs +
-                ", productieJaar=" + productieJaar +
-                '}';
+        return "Computer: " + type +
+                " met macAdres " + macAdres +
+                " productie jaar " + productieJaar +
+                " met een huidigewaarden van: " + decimalFormat.format(huidigeWaarden());
     }
 }

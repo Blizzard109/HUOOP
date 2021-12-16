@@ -20,10 +20,10 @@ public class BedrijfsInventaris {
 
     @Override
     public String toString() {
-        return "BedrijfsInventaris{" +
-                "bedrijfsNaam='" + bedrijfsNaam + '\'' +
-                ", budget=" + budget +
-                ", alleGoederen=" + alleGoederen +
-                '}';
+        String s = "Bedrijf " + bedrijfsNaam + " heeft budget " + budget + " en bezit de volgende goederen:";
+        for (Goed g: alleGoederen) {
+            s += "\n" + g;
+        }
+        return s;
     }
 }

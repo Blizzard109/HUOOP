@@ -1,9 +1,14 @@
 package rs.weerk4.practicum8;
 
+import java.text.DecimalFormat;
+
 public abstract class Voertuig implements Goed{
     private String type;
     protected double nieuwprijs;
     protected int bouwjaar;
+
+    private String pattern = "0.00";
+    private DecimalFormat decimalFormat = new DecimalFormat(pattern);
 
     public Voertuig(String tp, double pr, int jr){
         type = tp;
@@ -24,10 +29,6 @@ public abstract class Voertuig implements Goed{
 
     @Override
     public String toString() {
-        return "Voertuig{" +
-                "type='" + type + '\'' +
-                ", nieuwprijs=" + nieuwprijs +
-                ", bouwjaar=" + bouwjaar +
-                '}';
+        return "Voertuig: " + type + " met bouwjaar " + bouwjaar + " heeft een waarden van: " + decimalFormat.format(huidigeWaarden());
     }
 }
