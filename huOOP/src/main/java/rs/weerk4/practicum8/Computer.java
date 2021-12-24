@@ -1,5 +1,7 @@
 package rs.weerk4.practicum8;
 
+import rs.week5.practicum9a.Utils;
+
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 
@@ -45,6 +47,6 @@ public class Computer implements Goed{
         return "Computer: " + type +
                 " met macAdres " + macAdres +
                 " productie jaar " + productieJaar +
-                " met een huidigewaarden van: " + decimalFormat.format(huidigeWaarden());
+                " met een huidigewaarden van: " + Utils.euroBedrag(huidigeWaarden());
     }
 }

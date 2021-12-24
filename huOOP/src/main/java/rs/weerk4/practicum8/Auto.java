@@ -25,7 +25,7 @@ public class Auto extends Voertuig{
     public boolean equals(Object o) {
         if(o instanceof Auto){
             Auto ov = (Auto) o;
-            if (ov.bouwjaar == this.bouwjaar && ov.kenteken == this.kenteken && ov.nieuwprijs == this.nieuwprijs){
+            if (ov.kenteken == this.kenteken && super.equals(o)){
                 return true;
             }
         }

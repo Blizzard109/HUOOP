@@ -15,6 +15,7 @@ public class BedrijfsInventaris {
     public void schafAan(Goed g){
         if(g.huidigeWaarden() <= budget && !alleGoederen.contains(g)){
             alleGoederen.add(g);
+            budget -= g.huidigeWaarden();
         }
     }
 

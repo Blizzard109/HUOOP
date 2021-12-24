@@ -1,5 +1,7 @@
 package rs.weerk4.practicum8;
 
+import rs.week5.practicum9a.Utils;
+
 import java.text.DecimalFormat;
 
 public abstract class Voertuig implements Goed{
@@ -29,6 +31,6 @@ public abstract class Voertuig implements Goed{
 
     @Override
     public String toString() {
-        return "Voertuig: " + type + " met bouwjaar " + bouwjaar + " heeft een waarden van: " + decimalFormat.format(huidigeWaarden());
+        return "Voertuig: " + type + " met bouwjaar " + bouwjaar + " heeft een waarden van: " + Utils.euroBedrag(huidigeWaarden(),1);
     }
 }
