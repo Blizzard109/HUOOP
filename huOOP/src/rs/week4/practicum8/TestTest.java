@@ -1,4 +1,4 @@
-package rs.weerk4.practicum8;
+package rs.week4.practicum8;
 
 import org.junit.jupiter.api.Test;
 
