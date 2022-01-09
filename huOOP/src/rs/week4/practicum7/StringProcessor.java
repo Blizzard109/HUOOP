@@ -1,4 +1,4 @@
-package rs.weerk4.practicum7;
+package rs.week4.practicum7;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package rs.weerk4.practicum8;
+package rs.week4.practicum8;
 
 import rs.week5.practicum9a.Utils;
 
